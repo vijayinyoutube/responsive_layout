@@ -13,8 +13,6 @@ class Siderbar extends StatefulWidget {
 }
 
 class _SiderbarState extends State<Siderbar> {
-  Color primaryColor = Colors.transparent;
-  int previousIndex = 0;
   var list = [];
   @override
   void initState() {
@@ -69,17 +67,21 @@ class _SiderbarState extends State<Siderbar> {
             "Vijay Creations",
             style: TextStyle(color: Colors.white, fontSize: 20.00),
           ),
+           widthSpacer(10.00),
         ],
       );
 
   Widget buildItem(BuildContext context, int index) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.00),
-        child: GestureDetector(
-          onTap: () {
+        padding: const EdgeInsets.symmetric(vertical: 0),
+        child: MouseRegion(
+          onHover: (PointerEvent event) {
             setState(() {
-              list[previousIndex].isSelected = false;
               list[index].isSelected = true;
-              previousIndex = index;
+            });
+          },
+          onExit: (PointerEvent event) {
+            setState(() {
+              list[index].isSelected = false;
             });
           },
           child: Container(
@@ -87,7 +89,7 @@ class _SiderbarState extends State<Siderbar> {
                 ? Colors.white.withOpacity(0.25)
                 : Colors.transparent,
             width: double.infinity,
-            height: 35.00,
+            height: 50,
             child: Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -101,11 +103,4 @@ class _SiderbarState extends State<Siderbar> {
           ),
         ),
       );
-
-  changeColor() {
-    setState(() {
-      print("hovered");
-      primaryColor = Colors.white.withOpacity(0.25);
-    });
-  }
 }
