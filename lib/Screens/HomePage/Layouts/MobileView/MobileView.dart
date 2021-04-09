@@ -54,6 +54,7 @@ Widget buildMenuIcon(GlobalKey<ScaffoldState> _scaffoldKey) => Flexible(
 Widget buildTextVC() => Flexible(
       child: Text(
         "Vijay Creations",
+        textAlign: TextAlign.center,
         style: TextStyle(color: Colors.black, fontSize: 20.00),
       ),
     );
