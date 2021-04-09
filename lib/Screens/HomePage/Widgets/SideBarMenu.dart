@@ -18,7 +18,7 @@ class _SiderbarState extends State<Siderbar> {
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < 25; i++) list.add(ListItem<String>("item $i"));
+    for (int i = 0; i < 25; i++) list.add(ListItem<String>("Item $i"));
   }
 
   @override
