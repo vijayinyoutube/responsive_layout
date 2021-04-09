@@ -14,6 +14,7 @@ class Siderbar extends StatefulWidget {
 
 class _SiderbarState extends State<Siderbar> {
   var list = [];
+  int previousIndex = 0;
   @override
   void initState() {
     super.initState();
@@ -46,7 +47,6 @@ class _SiderbarState extends State<Siderbar> {
               itemCount: list.length,
               itemBuilder: buildItem,
             )),
-            //for (var i = 0; i < 25; i++)
           ],
         ),
       );
@@ -67,36 +67,47 @@ class _SiderbarState extends State<Siderbar> {
             "Vijay Creations",
             style: TextStyle(color: Colors.white, fontSize: 20.00),
           ),
-           widthSpacer(10.00),
+          widthSpacer(10.00),
         ],
       );
 
   Widget buildItem(BuildContext context, int index) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 0),
-        child: MouseRegion(
-          onHover: (PointerEvent event) {
+        child: GestureDetector(
+          onTap: () {
             setState(() {
               list[index].isSelected = true;
+              index != previousIndex
+                  ? list[previousIndex].isSelected = false
+                  : list[previousIndex].isSelected = true;
+              previousIndex = index;
             });
           },
-          onExit: (PointerEvent event) {
-            setState(() {
-              list[index].isSelected = false;
-            });
-          },
-          child: Container(
-            color: list[index].isSelected
-                ? Colors.white.withOpacity(0.25)
-                : Colors.transparent,
-            width: double.infinity,
-            height: 50,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.all(10.00),
-                child: Text(
-                  list[index].data,
-                  style: TextStyle(color: Colors.white),
+          child: MouseRegion(
+            onHover: (PointerEvent event) {
+              setState(() {
+                list[index].isSelected = true;
+              });
+            },
+            onExit: (PointerEvent event) {
+              setState(() {
+                list[index].isSelected = false;
+              });
+            },
+            child: Container(
+              color: list[index].isSelected
+                  ? Colors.white.withOpacity(0.25)
+                  : Colors.transparent,
+              width: double.infinity,
+              height: 50,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.00),
+                  child: Text(
+                    list[index].data,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),
