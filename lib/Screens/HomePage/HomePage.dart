@@ -1,7 +1,8 @@
-import 'Layouts/MobileView/MobileView.dart';
-import 'Widgets/SideBarMenu.dart';
 import 'BreakPoints/BreakPoints.dart';
 import 'package:flutter/material.dart';
+import 'Layouts/TabletView/TabletView.dart';
+import 'Layouts/MobileView/MobileView.dart';
+import 'Layouts/DesktopView/DesktopView.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -14,8 +15,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: ResponsiveLayoutClass(
         mobileView: MobileViewLayout(),
-        tabletView: buildSideBar(),
-        desktopView: buildSideBar(),
+        tabletView: TabletViewLayout(),
+        desktopView: DeskTopViewLayout(),
       ),
     );
   }
