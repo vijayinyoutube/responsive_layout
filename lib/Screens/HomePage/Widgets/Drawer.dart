@@ -14,14 +14,11 @@ Widget buildDrawer(BuildContext context, Size _size) => Container(
                 color: Colors.transparent,
               ),
             ),
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () => Navigator.pop(context),
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () => Navigator.pop(context),
-            ),
+            for (var i = 0; i < 25; i++)
+              ListTile(
+                title: Text('Item ${(i)}'),
+                onTap: () => Navigator.pop(context),
+              ),
           ],
         ),
       ),

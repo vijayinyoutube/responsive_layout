@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_layout/Screens/HomePage/Widgets/Drawer.dart';
+import 'package:responsive_layout/Screens/HomePage/Widgets/SideBarMenu.dart';
 
 class DeskTopViewLayout extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    var _size = MediaQuery.of(context).size;
-    return Container(
-      child: buildDrawer(context, _size),
-    );
-  }
+  Widget build(BuildContext context) => buildSideBar();
 }
