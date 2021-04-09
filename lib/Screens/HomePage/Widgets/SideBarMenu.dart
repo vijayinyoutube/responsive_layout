@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_layout/GeneralWidgets/GWidgets.dart';
 
+class ListItem<T> {
+  bool isSelected = false;
+  T data;
+  ListItem(this.data);
+}
+
 class Siderbar extends StatefulWidget {
   @override
   _SiderbarState createState() => _SiderbarState();
@@ -8,6 +14,13 @@ class Siderbar extends StatefulWidget {
 
 class _SiderbarState extends State<Siderbar> {
   Color primaryColor = Colors.transparent;
+  int previousIndex = 0;
+  var list = [];
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 25; i++) list.add(ListItem<String>("item $i"));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +44,10 @@ class _SiderbarState extends State<Siderbar> {
             ),
             heightSpacer(10.00),
             Expanded(
-              child: ListView.builder(
-                  itemCount: 25,
-                  itemBuilder: (context, index) {
-                    return buildItem("Item ${(index)}");
-                  }),
-            ),
+                child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: buildItem,
+            )),
             //for (var i = 0; i < 25; i++)
           ],
         ),
@@ -61,21 +72,20 @@ class _SiderbarState extends State<Siderbar> {
         ],
       );
 
-  Widget buildItem(String itemName) => Padding(
+  Widget buildItem(BuildContext context, int index) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.00),
-        child: MouseRegion(
-          onHover: (PointerEvent event) {
+        child: GestureDetector(
+          onTap: () {
             setState(() {
-              primaryColor = Colors.white.withOpacity(0.25);
-            });
-          },
-          onExit: (PointerEvent event) {
-            setState(() {
-              primaryColor = Colors.transparent;
+              list[previousIndex].isSelected = false;
+              list[index].isSelected = true;
+              previousIndex = index;
             });
           },
           child: Container(
-            color: primaryColor,
+            color: list[index].isSelected
+                ? Colors.white.withOpacity(0.25)
+                : Colors.transparent,
             width: double.infinity,
             height: 35.00,
             child: Align(
@@ -83,7 +93,7 @@ class _SiderbarState extends State<Siderbar> {
               child: Padding(
                 padding: const EdgeInsets.all(10.00),
                 child: Text(
-                  itemName,
+                  list[index].data,
                   style: TextStyle(color: Colors.white),
                 ),
               ),
