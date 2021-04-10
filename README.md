@@ -7,6 +7,9 @@
 [![Flutter](https://img.shields.io/badge/_Flutter_-App-grey.svg?&logo=Flutter&logoColor=white&labelColor=blue)](https://github.com/vijayinyoutube/responsive_layout)
 
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/58719230/114267815-8a4c9000-9a1b-11eb-9a33-f11f6e0c3a00.png" width="100%">
+</p>
 
 
 ## Flutter
@@ -16,6 +19,7 @@
 
 ## App
 
+Check out the video tutorial 👉 : https://youtu.be/XAPQJbYmi_I
 
 To know more awesome content about Flutter., 
 
