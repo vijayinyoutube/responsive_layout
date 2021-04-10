@@ -1,4 +1,4 @@
-# Responsive_layout - Flutter App (Web & Mobile)
+# Responsive Layout - Flutter App (Web & Mobile)
 
 [![BUILD](https://img.shields.io/badge/Build-Passing-<COLOR>.svg)](https://github.com/vijayinyoutube/responsive_layout)
 [![vijaycreations](https://img.shields.io/badge/Follow_me-vijaycreations-orange.svg?&logo=youtube&logoColor=orange)](https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ)
