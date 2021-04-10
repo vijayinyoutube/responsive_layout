@@ -1,4 +1,4 @@
-# Responsive Layout - Flutter App (Web & Mobile)
+# ✨Responsive Layout - Flutter App (Web & Mobile)
 
 [![BUILD](https://img.shields.io/badge/Build-Passing-<COLOR>.svg)](https://github.com/vijayinyoutube/responsive_layout)
 [![vijaycreations](https://img.shields.io/badge/Follow_me-vijaycreations-orange.svg?&logo=youtube&logoColor=orange)](https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ)
@@ -12,12 +12,12 @@
 </p>
 
 
-## Flutter
+## 🎯Flutter
 [Flutter](https://flutter.dev/) is a crossplatfrom UI tool kit that helps in developing native Android and iOS app from a single code base.
 
 
 
-## App
+## 📱App
 
 Check out the video tutorial 👉 : https://youtu.be/XAPQJbYmi_I
 
@@ -34,7 +34,7 @@ Results | #DeskTop View | #MobileView | #MobileView |
 Images | <img src="https://user-images.githubusercontent.com/58719230/114231076-92fb8280-9997-11eb-8453-279e4e778249.png" width="500" height="450"> | <img src="https://user-images.githubusercontent.com/58719230/114231082-955ddc80-9997-11eb-887f-a18b40f13830.png" width="500" height="450"> | <img src="https://user-images.githubusercontent.com/58719230/114231088-968f0980-9997-11eb-9b56-dad05e4c4ed0.png" width="500" height="450"> |
 
 
-## License
+## 📑License
 
 ```
 MIT License
